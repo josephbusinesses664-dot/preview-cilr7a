@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fowler's Auto Upholstery Shop - Expert Service in Stockton</title>
+    <style>
+        :root {
+            --charcoal: #1f2933;
+            --red: #d62828;
+            --bg-light: #f5f6f7;
+            --white: white;
+            --font-primary: 'Trebuchet MS', Verdana, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-primary);
+            color: #333;
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+
+        section {
+            padding: 60px 5% 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Header Styling --- */
+        .navbar {
+            background-color: var(--charcoal);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 3%;
+        }
+
+        .navbar hgroup a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            margin-left: 25px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+            padding: 5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+        /* --- Hero Styling --- */
+        #hero {
+            background-color: var(--charcoal);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero h1 {
+            font-size: 4em;
+            margin-bottom: 5px;
+            letter-spacing: -2px;
+        }
+
+        #hero p {
+            font-size: 1.8em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .btn-call {
+            background-color: var(--red);
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 40px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-call:hover {
+            background-color: #b52424;
+        }
+
+        /* --- Services Styling --- */
+        #services h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 20px;
+            border-top: 4px solid var(--red);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--charcoal);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        /* --- About & Contact Styling --- */
+        #about h2, #contact h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+        }
+
+        .about-blurb p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #contact .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            padding-bottom: 30px;
+        }
+
+        .phone-large, .address-block {
+            text-align: center;
+            flex: 1 1 250px;
+            min-width: 200px;
+        }
+
+        .phone-number {
+            font-size: 3em;
+            color: var(--red);
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        
+        /* Hours Table */
+        #contact table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        #contact th, #contact td {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        #contact th {
+            background-color: var(--charcoal);
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        /* --- Footer Styling --- */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        /* --- Responsiveness --- */
+        @media (max-width: 640px) {
+            /* Navbar adjustments */
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .navbar hgroup a {
+                margin-bottom: 10px;
+                font-size: 1.6em;
+            }
+            .nav-links a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            /* Hero adjustments */
+            #hero h1 {
+                font-size: 2.8em;
+            }
+
+            #hero p {
+                font-size: 1.4em;
+            }
+            
+            /* Services grid adjustment */
+            .service-grid {
+                gap: 20px;
+            }
+
+            /* Contact adjustments */
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header & Sticky Nav -->
+    <header class="navbar">
+        <hgroup>
+            <a href="#" style="text-decoration: none;">Fowler's Auto Upholstery Shop</a>
+        </hgroup>
+        <nav class="nav-links">
+            <a href="#services" class="scroll-link">Services</a>
+            <a href="#about" class="scroll-link">About</a>
+            <a href="#contact" class="scroll-link">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="hero">
+        <h1>Restoring Your Ride's Interior</h1>
+        <p>Expert Auto Upholstery Service in Stockton, CA</p>
+        <a href="tel:+12099484038" class="btn-call">Call (209) 948-4038</a>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services">
+        <h2>Our Signature Services</h2>
+        <div class="service-grid">
+            
+            <div class="card">
+                <h3>Car Seat Reupholstery</h3>
+                <p>Perfecting the comfort and look of your original seats with durable, premium materials.</p>
+            </div>
+
+            <div class="card">
+                <h3>Headliner Replacement</h3>
+                <p>Revitalize the cabin ambiance by replacing worn or stained headliners professionally.</p>
+            </div>
+
+            <div class="card">
+                <h3>Convertible Top Restoration</h3>
+                <p>Weather-proof and aesthetically perfect restoration of your vehicle's convertible top.</p>
+            </div>
+
+            <div class="card">
+                <h3>Custom Interior Builds</h3>
+                <p>From luxury stitching to specialized materials, we create unique, tailored interiors for every vehicle.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. About Section -->
+    <section id="about" style="background-color: #fff; padding-top: 40px;">
+        <h2>About Us</h2>
+        <div class="about-blurb">
+            <p>Fowler's Auto Upholstery Shop is a Stockton auto upholstery shop trusted by local body shops for decades. We are known for our gracious service, meticulous attention to detail, and getting customers in fast for quality interior work.</p>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact">
+        <h2>Visit Us Today</h2>
+        
+        <div class="contact-info">
+            
+            <div class="phone-large">
+                <p style="font-size:1.2em; color:#666;">Call Us:</p>
+                <!-- Using a pseudo-button for clickable phone number -->
+                <a href="tel:+12099484038" class="phone-number">(209) 948-4038</a>
+            </div>
+
+            <div class="address-block">
+                <p style="font-size:1.2em; color:#666;">Find Us At:</p>
+                <strong>Fowler's Auto Upholstery Shop</strong><br>
+                1135 W Fremont St,<br>
+                Stockton, CA 95203
+            </div>
+
+        </div>
+        
+        <!-- Hours Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday - Friday</td>
+                    <td style="font-weight: bold; color: var(--charcoal);">8:30 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Closed</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <!-- 6. Footer -->
+    <footer>
+        Fowler's Auto Upholstery Shop &copy; 2026
+    </footer>
+
+</body>
+</html>
